@@ -1,9 +1,9 @@
 import React from 'react';
-import { SecondsToTime } from '../utils/secondsToTime';
+import { SecondsToMinutes } from '../utils/secondsToMinutes';
 
 type TimerProps = {
     mainTime: number;
 };
 export function Timer(props: TimerProps): JSX.Element {
-    return <div className="timer">{SecondsToTime(props.mainTime)}</div>;
+    return <div className="timer">{SecondsToMinutes(props.mainTime)}</div>;
 }

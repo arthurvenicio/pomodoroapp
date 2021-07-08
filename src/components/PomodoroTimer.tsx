@@ -79,8 +79,11 @@ export function PomodoroTimer(props: PropsType): JSX.Element {
         }
 
         if (working) setNumberOfPomodoros(numberOfPomodoros + 1);
+        if (resting) enableWorking();
     }, [
+        toogleWorkingMode,
         working,
+        resting,
         mainTime,
         cyclesQtdManager,
         numberOfPomodoros,
@@ -92,7 +95,7 @@ export function PomodoroTimer(props: PropsType): JSX.Element {
 
     return (
         <div className="pomodoro">
-            <h2>You are: Working</h2>
+            <h2>You are: {working ? 'Working' : 'Relax'}</h2>
             <Timer mainTime={mainTime} />
 
             <div className="controls">
@@ -107,8 +110,8 @@ export function PomodoroTimer(props: PropsType): JSX.Element {
 
             <div className="details">
                 <p>Completed Cycles: {completedCycles}</p>
-                <p>Cycles Completed: {SecondsToTime(fullWorkingTime)}</p>
-                <p>Completed Pomodoro: {completedCycles}</p>
+                <p>Working Time: {SecondsToTime(fullWorkingTime)}</p>
+                <p>Completed Pomodoro: {numberOfPomodoros}</p>
             </div>
         </div>
     );
