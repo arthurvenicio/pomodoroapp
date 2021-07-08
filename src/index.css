@@ -51,6 +51,7 @@ body {
 .pomodoro button {
     background: #41e1ba;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
     padding: 10px 25px;
     color: #000;
